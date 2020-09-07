@@ -32,11 +32,12 @@ public class KafkaRestMain {
     javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(
         new javax.net.ssl.HostnameVerifier() {
 
+          @Override
           public boolean verify(
               String hostname,
               javax.net.ssl.SSLSession sslSession
           ) {
-            if (hostname.equals("localhost")) {
+            if ("localhost".equals(hostname)) {
               return true;
             }
             return false;
