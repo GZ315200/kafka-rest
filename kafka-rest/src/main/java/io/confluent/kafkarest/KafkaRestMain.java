@@ -23,6 +23,9 @@ import java.io.IOException;
 import io.confluent.rest.RestConfigException;
 
 
+/**
+ * @author gygeszean
+ */
 public class KafkaRestMain {
 
   private static final Logger log = LoggerFactory.getLogger(KafkaRestMain.class);
@@ -32,6 +35,7 @@ public class KafkaRestMain {
     javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(
         new javax.net.ssl.HostnameVerifier() {
 
+          @Override
           public boolean verify(
               String hostname,
               javax.net.ssl.SSLSession sslSession
